@@ -1,16 +1,16 @@
-# 🕵️‍♂️ İş İlanı Takip ve Analiz Botu (Job Hunter Bot)
+#  İş İlanı Takip ve Analiz Botu (Job Hunter Bot)
 
 Bu proje, Python kullanarak Google arama sonuçları üzerinden **güncel (son 30 gün)** iş ilanlarını tarayan, verileri toplayan ve basit bir pazar analizi sunan bir otomasyon aracıdır.
 
 Özellikle veri analizi ve yazılım alanındaki iş arama sürecini optimize etmek, manuel arama yükünü kaldırmak ve piyasa trendlerini görmek için geliştirilmiştir.
 
-## 🚀 Özellikler
+##  Özellikler
 
-* **🔍 İnteraktif Arama:** Kullanıcıdan pozisyon, şehir ve zorunlu yetenek bilgisini (örn: Python, SQL) alarak kişiselleştirilmiş arama yapar.
-* **🕒 Güncellik Filtresi:** Eski tarihli veya süresi dolmuş ilanları eler; sadece Google'ın **son 30 gün** içinde indekslediği aktif ilanları getirir.
-* **📊 Pazar Analizi:** Bulunan ilanların hangi platformlardan (LinkedIn vs Kariyer.net) geldiğini analiz eder ve terminalde istatistiksel rapor sunar.
-* **💾 Otomatik Raporlama:** Sonuçları düzenli bir formatta `Guncel_Linkler.csv` dosyasına kaydeder.
-* **🛡️ Güvenlik:** Hassas API anahtarlarını kod içinde barındırmaz, `.env` dosyası kullanarak güvenliği sağlar.
+* ** İnteraktif Arama:** Kullanıcıdan pozisyon, şehir ve zorunlu yetenek bilgisini (örn: Python, SQL) alarak kişiselleştirilmiş arama yapar.
+* ** Güncellik Filtresi:** Eski tarihli veya süresi dolmuş ilanları eler; sadece Google'ın **son 30 gün** içinde indekslediği aktif ilanları getirir.
+* ** Pazar Analizi:** Bulunan ilanların hangi platformlardan (LinkedIn vs Kariyer.net) geldiğini analiz eder ve terminalde istatistiksel rapor sunar.
+* ** Otomatik Raporlama:** Sonuçları düzenli bir formatta `Guncel_Linkler.csv` dosyasına kaydeder.
+* ** Güvenlik:** Hassas API anahtarlarını kod içinde barındırmaz, `.env` dosyası kullanarak güvenliği sağlar.
 
 ## 🛠️ Kullanılan Teknolojiler
 
@@ -19,7 +19,7 @@ Bu proje, Python kullanarak Google arama sonuçları üzerinden **güncel (son 3
 * **Pandas** (Veri İşleme ve CSV Kaydı için)
 * **Python-Dotenv** (Çevre Değişkeni ve Güvenlik Yönetimi için)
 
-## 💻 Kurulum ve Çalıştırma
+## Kurulum ve Çalıştırma
 
 Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
 
