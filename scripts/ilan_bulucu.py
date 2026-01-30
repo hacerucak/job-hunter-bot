@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from serpapi import GoogleSearch
 
-# .env dosyasını yükle (Güvenlik için)
+
 load_dotenv()
 API_KEY = os.getenv("SERPAPI_KEY")
 
@@ -13,17 +13,17 @@ def kullaniciya_sor():
     print(" İŞ İLANI ANALİZ ROBOTU (V2)")
     print("="*40)
     
-    # 1. Pozisyon Sor
+    
     print("Hangi pozisyonu arıyorsun? (Varsayılan: Veri Analisti)")
     girilen_pozisyon = input(" Pozisyon: ").strip()
     pozisyon = girilen_pozisyon if girilen_pozisyon else "Veri Analisti"
     
-    # 2. Şehir Sor
+    
     print(f"\n{pozisyon} için hangi şehir? (Varsayılan: İstanbul)")
     girilen_sehir = input(" Şehir: ").strip()
     sehir = girilen_sehir if girilen_sehir else "İstanbul"
     
-    # 3. Yetenek Sor
+    
     print("\nMutlaka olması gereken yetenek? (Varsayılan: Python)")
     girilen_yetenek = input(" Yetenek: ").strip()
     yetenek = girilen_yetenek if girilen_yetenek else "Python"
@@ -50,17 +50,17 @@ def analiz_yap(liste):
     print("="*40 + "\n")
 
 def linkleri_getir():
-    # Önce kullanıcıya soralım
+    
     pozisyon, sehir, zorunlu_yetenek = kullaniciya_sor()
     
-    # Filtre Ayarları
+    
     deneyim_seviyesi = "yeni_mezun" 
     deneyim_sozlugu = {
         "yeni_mezun": '"Junior" OR "Jr" OR "Yeni Mezun" OR "Tecrübesiz" OR "0-2 yıl"'
     }
     deneyim_kodu = deneyim_sozlugu.get(deneyim_seviyesi, "")
     
-    # Sorguyu Oluştur
+    
     sorgu = f'(site:kariyer.net OR site:linkedin.com/jobs) "{pozisyon}" {sehir} "{zorunlu_yetenek}"'
     if deneyim_kodu:
         sorgu += f' ({deneyim_kodu})'
@@ -74,7 +74,7 @@ def linkleri_getir():
       "gl": "tr",
       "hl": "tr",
       "num": 40,
-      "tbs": "qdr:m", # Son 1 Ay
+      "tbs": "qdr:m", 
       "api_key": API_KEY
     }
 
@@ -100,15 +100,15 @@ def linkleri_getir():
                 })
     return liste
 
-# --- ÇALIŞTIR ---
+
 if __name__ == "__main__":
     veriler = linkleri_getir()
     
     if veriler:
-        # Önce Analiz Sonucunu Göster (Burası Yeni)
+        
         analiz_yap(veriler)
         
-        # Sonra Listeyi Kaydet
+        
         df = pd.DataFrame(veriler)
         df.to_csv("Guncel_Linkler.csv", index=False)
         print(f" Tüm linkler 'Guncel_Linkler.csv' dosyasına kaydedildi.")
